@@ -11,6 +11,7 @@ class Megazine
 	string tell;
 	string email;
 	int year;
+	static int count;
 
 
 public:
@@ -20,17 +21,17 @@ public:
 	void Input();
 	void Print();
 
-	//void SetName(string n);
-	//void SetDescription(string n);
-	//void SetTelefon(string n);
-	//void SetEmail(string n);
-	//void SetYear(int y);
+	void SetName(string n);
+	void SetDescription(string d);
+	void SetTelefon(string t);
+	void SetEmail(string e);
+	void SetYear(int y);
 
-	//string GetName();
-	//string GetDescription();
-	//string GetTelefon();
-	//string GetEmail();
-	//string GetYear();
+	string GetName();
+	string GetDescription();
+	string GetTelefon();
+	string GetEmail();
+	int GetYear();
 
 
 };
@@ -51,14 +52,80 @@ inline Megazine::Megazine(string n, string d, string t, string e, int y)
 
 inline void Megazine::Input()
 {
-	cin >> name;
-	cin >> description;
-	cin >> tell;
-	cin >> email;
+	char buffer[100];
+	cout << "Enter a name: ";
+	cin.getline(buffer, 100);
+	name = buffer;
+	cout << "Enter a Discription: ";
+	cin.getline(buffer, 100);
+	description = buffer;
+	cout << "Enter a telefon: ";
+	cin.getline(buffer, 100);
+	tell = buffer;
+	cout << "Enter a email: ";
+	cin.getline(buffer, 100);
+	email = buffer;
+	cout << "Enter a year: ";
 	cin >> year;
+	count++;
 }
 
 inline void Megazine::Print()
 {
-	cout << name << "\t" << description << "\t" << tell << "\t" << email << "\t" << year;
+	cout << "\n" << "Name: " << name << "\n" << "Discription: " << description << "\n" << "Telefon: " << tell << "\n" << "Email: " << email << "\n" << "Year: " << year << "\n" << "Count: " << count << "\n\n";
 }
+
+inline void Megazine::SetName(string n)
+{
+	n = name;
+}
+
+inline void Megazine::SetDescription(string d)
+{
+	d = description;
+}
+
+inline void Megazine::SetTelefon(string t)
+{
+	t = tell;
+}
+
+inline void Megazine::SetEmail(string e){
+	e = email;
+}
+
+inline void Megazine::SetYear(int y)
+{
+	y = year;
+}
+
+inline string Megazine::GetName()
+{
+	return name;
+}
+
+inline string Megazine::GetDescription()
+{
+	return description;
+}
+
+inline string Megazine::GetTelefon()
+{
+	return tell;
+}
+
+inline string Megazine::GetEmail()
+{
+	return email;
+}
+
+inline int Megazine::GetYear()
+{
+	return year;
+}
+
+
+int Megazine::count = 0;
+
+
+
